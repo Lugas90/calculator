@@ -12,23 +12,42 @@ public class CalculatorService {
 
     public String plus( Integer num1, Integer num2) {
         Integer sum = num1 + num2;
-          return num1 + " + " + num2  + " = " +  sum;
+        if (num1 == null){
+          return "Ошибка, введите первое число";
+        } else if (num2 == null) {
+            return "ошибка, введите второе число";
+        }
+        return num1 + " + " + num2  + " = " +  sum;
     }
 
     public String minus(Integer num1, Integer num2) {
         Integer sum = num1 - num2;
+        if (num1 == null){
+            return "Ошибка, введите первое число";
+        } else if (num2 == null) {
+            return "ошибка, введите второе число";
+        }
         return num1 + " - " + num2  + " = " +  sum;
     }
 
     public String multiply(Integer num1, Integer num2) {
         Integer sum = num1 * num2;
+        if (num1 == null){
+            return "Ошибка, введите первое число";
+        } else if (num2 == null) {
+            return "ошибка, введите второе число";
+        }
         return num1 + " * " + num2  + " = " +  sum;
     }
 
     public String divide(Integer num1, Integer num2) {
         Integer sum = num1 / num2;
-        if (num1 == 0 || num2 == 0){
-            throw new ArithmeticException();
+        if (num1 == null){
+            return "Ошибка, введите первое число";
+        } else if (num2 == null) {
+            return "ошибка, введите второе число";
+        }else if (num1 == 0){
+            return "Ошибка, нет деления на ноль";
         }
         return num1 + " / " + num2  + " = " +  sum;
     }
